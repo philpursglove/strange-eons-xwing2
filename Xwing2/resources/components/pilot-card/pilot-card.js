@@ -286,8 +286,17 @@ function createInterface(diy,editor) {
 	upgradeBarCheckbox = checkBox(@xw2-upgrade-bar);
 	bindings.add('UpgradeBar',upgradeBarCheckbox,[0]);
 
-	uniqueCheckbox = checkBox(@xw2-unique);
-	bindings.add('UniquePilot',uniqueCheckbox,[0,2]);
+	uniqueItems = [];
+	uniqueItems.push(ListItem(0, 'Generic'));
+	uniqueItems.push(ListItem(1, 'Unique'));
+	uniqueItems.push(ListItem(2, 'Limited 2'));
+	uniqueItems.push(ListItem(3, 'Limited 3'));
+
+	uniqueBox = comboBox(uniqueItems);
+	bindings.add('UniquePilot', uniqueBox);
+
+	//uniqueCheckbox = checkBox(@xw2-unique);
+	//bindings.add('UniquePilot',uniqueCheckbox,[0,2]);
 	
 	droidCheckbox = checkBox(@xw2-droid);
 	bindings.add('Droid',droidCheckbox,[0]);
